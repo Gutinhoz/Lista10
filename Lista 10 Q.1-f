@@ -1,0 +1,44 @@
+/*Obter e imprimir um vetor que seja a soma dos elementos de cada coluna de uma
+ * matriz numérica qualquer dada.*/
+#include <stdio.h>
+#define MATRIZ 100
+int main() {
+  int i, j, LIN, COL;
+  int vetor[MATRIZ];
+  printf("\nDigite a quantidade de linhas da matriz: ");
+  if (scanf("%d", &LIN) != 1 || LIN < 0) {
+    printf("\nERRO...Digite um numero maior que zero");
+    return 1;
+  }
+  printf("\nDigite a quantidade de colunas da matriz: ");
+  if (scanf("%d", &COL) != 1 || COL < 0) {
+    printf("\nERRO...Digite um numero maior que zero");
+    return 1;
+  }
+  printf("\n------------------------------------------\n");
+  int mat[LIN][COL], soma[MATRIZ] = {0};
+  for (i = 0; i < LIN; i++) {
+    for (j = 0; j < COL; j++) {
+      printf("\nDigite sua matriz [%d][%d]: ", i + 1, j + 1);
+      scanf("%d", &mat[i][j]);
+    }
+  }
+  printf("\nA matriz:");
+  for (i = 0; i < LIN; i++) {
+    printf("\n");
+    for (j = 0; j < COL; j++) {
+      printf("%d\t", mat[i][j]);
+    }
+  }
+  for (i = 0; i < LIN; i++) {
+    for (j = 0; j < COL; j++) {
+      soma[j] += mat[i][j];
+    }
+  }
+  printf("\n------------------------------------------\n");
+  for (j = 0; j < COL; j++) {
+    printf("\n\tA soma da coluna [%d] e: %d", j + 1, soma[j]);
+  }
+
+  return 0;
+}
