@@ -1,0 +1,32 @@
+/*Receber uma matriz M[3][3] e um valor A. O programa deverá multiplicar cada
+elemento da matriz M por A, e mostrar a matriz resultante.*/
+
+#include <stdio.h>
+#define LIN 3
+#define COL 3
+int main() {
+  int A, i, j, A_matriz = 0, mat[LIN][COL];
+  for (i = 0; i < LIN; i++) {
+    for (j = 0; j < COL; j++) {
+      printf("\nDigite sua matriz a%d%d: ", i + 1, j + 1);
+      if (scanf("%d", &mat[i][j]) != 1) {
+        printf("\nERRO... Digite um numero");
+        return 1;
+      }
+    }
+  }
+  printf("\nDigite um valor para A o qual vai multiplicar a matriz: ");
+  if (scanf("%d", &A) != 1) {
+    printf("\nERRO... Digite um numero");
+  } else {
+
+    for (i = 0; i < LIN; i++) {
+      printf("\n");
+      for (j = 0; j < COL; j++) {
+        printf("\t%d", A * mat[i][j]);
+      }
+    }
+  }
+
+  return 0;
+}
