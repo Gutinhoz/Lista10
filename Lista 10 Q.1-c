@@ -1,0 +1,26 @@
+/*Gerar e imprimir uma matriz de ordem 4 onde seus elementos são da forma:
+A[i,j] = 2*i + 7*j – 2 se i < j;
+A[i,j] = 3*i – 1 se i = j ;
+A[i,j] = 4*i – 5*j*2 se i > j.
+*/
+#include <stdio.h>
+#define LIN 4
+#define COL 4
+int main() {
+  int i, j, mat[LIN][COL];
+  for (i = 0; i < LIN; i++) {
+    printf("\n");
+    for (j = 0; j < COL; j++) {
+      if (i == j) {
+        printf(" \t%d", 3 * i - 1);
+      }
+      if (i < j) {
+        printf(" \t%d", 2 * i + 7 * j - 2);
+      }
+      if (i > j) {
+        printf(" \t%d", 4 * i - 5 * j * 2);
+      }
+    }
+  }
+  return 0;
+}
