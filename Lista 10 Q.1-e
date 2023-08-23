@@ -1,0 +1,32 @@
+/*Calcular a soma dos elementos que estão acima da diagonal principal em uma
+ * matriz numérica de ordem 4.*/
+
+#include <stdio.h>
+#define LIN 4
+#define COL 4
+int main() {
+  int i, j, soma = 0, acima_diag, mat[LIN][COL];
+  for (i = 0; i < LIN; i++) {
+    for (j = 0; j < COL; j++) {
+      printf("\nDigite sua matriz [%d][%d]: ", i, j);
+      if (scanf("%d", &mat[i][j]) != 1) {
+        printf("\nERRO...Digite um numero");
+        return 1;
+      }
+      if (i < j) {
+        soma += mat[i][j];
+      }
+    }
+  }
+  for (i = 0; i < LIN; i++) {
+    printf("\n");
+    for (j = 0; j < COL; j++) {
+      printf("\t%d\t", mat[i][j]);
+    }
+  }
+  printf("\n\nA soma dos elementos dos elementos acima da diagonal principal "
+         "e: %d",
+         soma);
+
+  return 0;
+}
