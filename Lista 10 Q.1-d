@@ -1,0 +1,30 @@
+/*Receber uma matriz A[6][6] e retornar o menor elemento da sua diagonal
+secundária, mostrando a posição em que ele está armazenado.*/
+
+#include <stdio.h>
+#define LIN 6
+#define COL 6
+int main() {
+  int i, j, menor_num, mat[LIN][COL];
+  for (i = 0; i < LIN; i++) {
+
+    for (j = 0; j < COL; j++) {
+      printf("\nDigite sua matriz[%d][%d] = ", i, j);
+      scanf("%d", &mat[i][j]);
+
+      if (i + j == 5 && mat[i][j] < menor_num) {
+        menor_num = mat[i][j];
+      }
+    }
+  }
+  for (i = 0; i < LIN; i++) {
+    printf("\n");
+    for (j = 0; j < COL; j++) {
+      printf("%d\t", mat[i][j]);
+    }
+  }
+
+  printf("\nO menor da diagonal secundaria e: %d", menor_num);
+
+  return 0;
+}
